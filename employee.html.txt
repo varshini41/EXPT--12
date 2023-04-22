@@ -1,0 +1,53 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="text/javascript">
+  function getEmployeeDetails() {
+      //alert("1");
+    var empId = document.getElementById("empId").value;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function()
+    {
+       // alert("e");
+      if (xhttp.readyState === 4 && xhttp.status === 200)
+      {
+          //alert("s");
+        var xmlDoc = this.responseXML;
+        var x = xmlDoc.getElementsByTagName("Employee");
+        alert(x.length);
+        for (i = 0; i < x.length; i++)
+        { 
+            //alert("hii");
+          var id = x[i].getElementsByTagName("empID")[0].childNodes[0].nodeValue;
+          if (id === empId)
+          {
+             // alert(id);
+            document.getElementById("empname").innerHTML =
+            x[i].getElementsByTagName("empName")[0].childNodes[0].nodeValue;
+            document.getElementById("empid").innerHTML =
+            x[i].getElementsByTagName("empID")[0].childNodes[0].nodeValue;
+            document.getElementById("department").innerHTML =
+            x[i].getElementsByTagName("Department")[0].childNodes[0].nodeValue;
+            break;
+          }
+        }
+      }
+    };
+    xhttp.open("GET", "employee.xml", true);
+    xhttp.send();
+  }
+</script>
+</head>
+<body>
+  Enter Employee ID: <input type="text" id="empId" />
+  <input type="button" value="Submit" onclick="getEmployeeDetails()" />
+  <br><br>
+  Name: <span id="empname"></span><br>
+  id: <span id="empid"></span><br>
+  department: <span id="department"></span>
+</body>
+</html>

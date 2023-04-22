@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Employees>
+    <Employee>
+        <empID>101</empID>
+        <empName>klaus michaelson</empName>
+        <Department>Marketing</Department>
+        <Salary>$65,000</Salary>
+    </Employee>
+    <Employee>
+        <empID>102</empID>
+        <empName>caroline</empName>
+        <Department>IT</Department>
+        <Salary>$90,000</Salary>
+    </Employee>
+    <Employee>
+        <empID>103</empID>
+        <empName>peter parker</empName>
+        <Department>Finance</Department>
+        <Salary>$75,000</Salary>
+    </Employee>
+    <Employee>
+        <empID>104</empID>
+        <empName>chris evans</empName>
+        <Department>Marketing</Department>
+        <Salary>$50,000</Salary>
+    </Employee>
+    <Employee>
+        <empID>105</empID>
+        <empName>tony stark</empName>
+        <Department>IT</Department>
+        <Salary>$80,000</Salary>
+    </Employee>
+</Employees>
